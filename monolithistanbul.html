@@ -1,10 +1,3 @@
-Galeri sekmesindeki fotoğrafları çok daha estetik, stüdyonun "modern, brütalist ve lüks" kimliğini daha güçlü yansıtacak yüksek kaliteli Unsplash görselleriyle değiştirdim. Görsellerin tonlarını (koyu betonlar, sıcak ışıklar, minimal hatlar) birbirine uyumlu olacak şekilde özel olarak seçtim. 
-
-Ayrıca projenin bütünlüğünü korumak adına "Projeler" sayfasının altındaki "Diğer Projeler" (Mini Galeri) görsellerini de bu yeni konseptle eşleşecek şekilde güncelledim.
-
-İşte güncellenmiş HTML dosyasının tamamı:
-
-```html
 <!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head>
@@ -82,13 +75,8 @@ Ayrıca projenin bütünlüğünü korumak adına "Projeler" sayfasının altın
   .page.active { display: block; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ══════════════════════════════════
-     PROJECT DETAIL PAGE
-  ══════════════════════════════════ */
-  .project-hero-header {
-    padding: 7rem 3rem 0;
-    max-width: 1400px; margin: 0 auto;
-  }
+  /* ── PROJECT DETAIL PAGE ── */
+  .project-hero-header { padding: 7rem 3rem 0; max-width: 1400px; margin: 0 auto; }
   .breadcrumb {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -97,453 +85,96 @@ Ayrıca projenin bütünlüğünü korumak adına "Projeler" sayfasının altın
     margin-bottom: 2.5rem;
   }
   .breadcrumb-dot { width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
-
   .project-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(5rem, 12vw, 11rem);
     font-weight: 300; line-height: 0.88;
-    letter-spacing: -0.02em;
-    color: var(--stone);
+    letter-spacing: -0.02em; color: var(--stone);
   }
-
   .project-meta-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 2rem; margin-top: 4rem;
     border-top: 1px solid rgba(90,83,70,0.12);
     padding-top: 2.5rem;
   }
-  .meta-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--stone-warm); opacity: 0.5;
-    display: block; margin-bottom: 0.6rem;
-  }
-  .meta-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-weight: 400; color: var(--stone);
-  }
-
-  /* HERO IMAGE */
-  .hero-image-wrap {
-    margin: 3rem 0 0;
-    width: 100%;
-    aspect-ratio: 21/9;
-    overflow: hidden;
-    position: relative;
-  }
-  .hero-image-wrap img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 12s ease;
-  }
+  .meta-label { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--stone-warm); opacity: 0.5; display: block; margin-bottom: 0.6rem; }
+  .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--stone); }
+  .hero-image-wrap { margin: 3rem 0 0; width: 100%; aspect-ratio: 21/9; overflow: hidden; position: relative; }
+  .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 12s ease; }
   .hero-image-wrap:hover img { transform: scale(1.03); }
 
-  /* NARRATIVE */
-  .narrative-section {
-    padding: 6rem 3rem;
-    max-width: 1400px; margin: 0 auto;
-    display: grid; grid-template-columns: 5fr 7fr; gap: 6rem;
-    align-items: start;
-  }
-  .section-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300; line-height: 1.15;
-    color: var(--stone); margin-bottom: 2rem;
-  }
-  .narrative-body {
-    font-size: 1.05rem; line-height: 1.8;
-    color: var(--stone-warm); font-weight: 300;
-    margin-bottom: 1.5rem;
-  }
-  .narrative-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-style: italic;
-    color: var(--stone-mid); line-height: 1.6;
-    border-left: 2px solid var(--gold);
-    padding-left: 1.5rem; margin: 2rem 0;
-  }
-  .btn-primary {
-    display: inline-block; margin-top: 1.5rem;
-    padding: 1rem 2.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--white); background: var(--stone);
-    border: none; cursor: pointer; text-decoration: none;
-    transition: background 0.3s, transform 0.15s;
-  }
-  .btn-primary:hover { background: var(--stone-mid); }
-  .btn-primary:active { transform: scale(0.98); }
+  /* ── NARRATIVE ── */
+  .narrative-section { padding: 6rem 3rem; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 6rem; align-items: start; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15; color: var(--stone); margin-bottom: 2rem; }
+  .narrative-body { font-size: 1.05rem; line-height: 1.8; color: var(--stone-warm); font-weight: 300; margin-bottom: 1.5rem; }
+  .narrative-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--stone-mid); line-height: 1.6; border-left: 2px solid var(--gold); padding-left: 1.5rem; margin: 2rem 0; }
+  .drawing-panel { background: var(--parchment-dark); padding: 4rem 3rem; position: relative; overflow: hidden; }
+  .drawing-label { position: absolute; top: 1.5rem; right: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone-warm); opacity: 0.4; }
 
-  .drawing-panel {
-    background: var(--parchment-dark);
-    padding: 4rem 3rem; position: relative;
-    overflow: hidden;
-  }
-  .drawing-label {
-    position: absolute; top: 1.5rem; right: 1.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--stone-warm); opacity: 0.4;
-  }
-  .drawing-panel img { width: 100%; height: auto; mix-blend-mode: multiply; opacity: 0.65; }
-
-  /* GALLERY */
+  /* ── GALLERY ── */
   .gallery-section { padding: 0 0 6rem; overflow: hidden; }
-  .gallery-header {
-    padding: 0 3rem 3rem;
-    max-width: 1400px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .gallery-scroll {
-    display: flex; gap: 1.5rem;
-    overflow-x: auto; padding: 0 3rem;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
+  .gallery-header { padding: 0 3rem 3rem; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .gallery-scroll { display: flex; gap: 1.5rem; overflow-x: auto; padding: 0 3rem; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .gallery-scroll::-webkit-scrollbar { display: none; }
-  .gallery-item {
-    flex-shrink: 0; width: min(70vw, 28rem);
-    aspect-ratio: 3/4; overflow: hidden;
-    scroll-snap-align: start; position: relative;
-  }
-  .gallery-item img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
+  .gallery-item { flex-shrink: 0; width: min(70vw, 28rem); aspect-ratio: 3/4; overflow: hidden; scroll-snap-align: start; position: relative; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   .gallery-item:hover img { transform: scale(1.06); }
-  .gallery-caption {
-    position: absolute; bottom: 1.5rem; left: 1.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--white); opacity: 0; transition: opacity 0.3s;
-    z-index: 10;
-  }
+  .gallery-caption { position: absolute; bottom: 1.5rem; left: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); opacity: 0; transition: opacity 0.3s; z-index: 10; }
   .gallery-item:hover .gallery-caption { opacity: 0.7; }
-  .gallery-item::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 40%);
-    opacity: 0; transition: opacity 0.3s; pointer-events: none;
-  }
-  .gallery-item:hover::after { opacity: 1; }
+  .gallery-nav-btn { background: none; border: none; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--stone-warm); display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
 
-  .gallery-nav-btn {
-    background: none; border: none; cursor: pointer;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.1em;
-    color: var(--stone-warm);
-    display: flex; align-items: center; gap: 0.5rem;
-    transition: color 0.2s;
-  }
-  .gallery-nav-btn:hover { color: var(--stone); }
-
-  /* MATERIALS */
-  .materials-section {
-    padding: 6rem 3rem;
-    max-width: 1400px; margin: 0 auto;
-  }
-  .materials-grid {
-    display: grid; grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1.5rem; margin-top: 3rem;
-  }
-  .mat-card {
-    padding: 3rem;
-  }
-  .mat-card-concept {
-    background: var(--parchment-dark);
-    grid-column: 1; grid-row: 1;
-  }
-  .mat-card-cert {
-    background: var(--stone);
-    color: var(--white);
-    grid-column: 2; grid-row: 1;
-    display: flex; flex-direction: column; justify-content: space-between;
-  }
-  .mat-card-energy {
-    background: var(--parchment-deeper);
-    grid-column: 3; grid-row: 1;
-    display: flex; flex-direction: column; justify-content: space-between;
-  }
-  .mat-card-swatches {
-    background: var(--white);
-    border: 1px solid rgba(90,83,70,0.1);
-    grid-column: 1 / -1; grid-row: 2;
-    padding: 3rem 3rem;
-  }
-  .card-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
-    opacity: 0.5; display: block; margin-bottom: 2.5rem;
-  }
-  .card-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem; font-weight: 400; line-height: 1.2;
-    margin-bottom: 1.2rem;
-  }
+  /* ── MATERIALS ── */
+  .materials-section { padding: 6rem 3rem; max-width: 1400px; margin: 0 auto; }
+  .materials-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .mat-card { padding: 3rem; }
+  .mat-card-concept { background: var(--parchment-dark); }
+  .mat-card-cert { background: var(--stone); color: var(--white); display: flex; flex-direction: column; justify-content: space-between; }
+  .mat-card-energy { background: var(--parchment-deeper); display: flex; flex-direction: column; justify-content: space-between; }
+  .mat-card-swatches { background: var(--white); border: 1px solid rgba(90,83,70,0.1); grid-column: 1 / -1; padding: 3rem; }
+  .card-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; display: block; margin-bottom: 2.5rem; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.2; margin-bottom: 1.2rem; }
   .card-body { font-size: 0.9rem; line-height: 1.7; opacity: 0.65; }
-  .cert-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem; font-style: italic; font-weight: 300;
-  }
-  .energy-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem; font-weight: 300; color: var(--stone);
-  }
   .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
   .swatch-block { display: flex; flex-direction: column; gap: 1rem; }
   .swatch-color { width: 100%; height: 5rem; }
-  .swatch-label { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.45; display: block; margin-bottom: 0.3rem; }
-  .swatch-name { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; }
+  .swatch-label { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.45; }
 
-  /* MOTTO */
-  .motto-section {
-    position: relative; height: 80vh; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 4rem;
-  }
-  .motto-bg {
-    position: absolute; inset: 0;
-  }
-  .motto-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.35); }
-  .motto-content {
-    position: relative; z-index: 2;
-    text-align: center; padding: 0 2rem; max-width: 860px;
-  }
-  .motto-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    font-weight: 300; font-style: italic;
-    color: var(--white); line-height: 1.2;
-    letter-spacing: 0.02em;
-  }
-  .motto-rule {
-    width: 6rem; height: 1px; background: rgba(255,255,255,0.3);
-    margin: 2.5rem auto 0;
-  }
-
-  /* ══════════════════════════════════
-     CONTACT PAGE
-  ══════════════════════════════════ */
-  .contact-header {
-    padding: 7rem 3rem 4rem;
-    max-width: 1400px; margin: 0 auto;
-    display: grid; grid-template-columns: 8fr 4fr; gap: 4rem; align-items: end;
-  }
-  .contact-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--gold); display: block; margin-bottom: 1.5rem;
-  }
-  .contact-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4rem, 9vw, 8rem);
-    font-weight: 300; line-height: 0.9;
-    letter-spacing: -0.02em; color: var(--stone);
-  }
-  .contact-sub { font-size: 1rem; line-height: 1.7; color: var(--stone-warm); font-weight: 300; }
-
-  .contact-main {
-    padding: 3rem;
-    max-width: 1400px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
-  }
-
-  /* FORM */
+  /* ── CONTACT ── */
+  .contact-header { padding: 7rem 3rem 4rem; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 8fr 4fr; gap: 4rem; align-items: end; }
+  .contact-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 9vw, 8rem); font-weight: 300; line-height: 0.9; letter-spacing: -0.02em; color: var(--stone); }
+  .contact-main { padding: 3rem; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
   .form-panel { background: var(--parchment-dark); padding: 4rem; }
   .form-group { margin-bottom: 3rem; }
-  .form-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--stone-warm); opacity: 0.5; display: block; margin-bottom: 1rem;
-  }
-  .form-input, .form-textarea {
-    width: 100%; background: var(--parchment-deeper);
-    border: none; border-bottom: 1px solid rgba(90,83,70,0.2);
-    padding: 1rem 1rem 1rem;
-    font-family: 'Instrument Sans', sans-serif;
-    font-size: 0.95rem; font-weight: 300;
-    color: var(--stone);
-    outline: none; resize: none;
-    transition: border-color 0.3s, background 0.3s;
-  }
-  .form-input:focus, .form-textarea:focus {
-    border-bottom-color: var(--gold);
-    background: var(--white);
-  }
-  .form-textarea { min-height: 7rem; }
-  .btn-submit {
-    padding: 1.1rem 3rem;
-    background: var(--stone); color: var(--white);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
-    border: none; cursor: pointer;
-    transition: background 0.3s, transform 0.15s;
-  }
-  .btn-submit:hover { background: var(--stone-mid); }
+  .form-input, .form-textarea { width: 100%; background: var(--parchment-deeper); border: none; border-bottom: 1px solid rgba(90,83,70,0.2); padding: 1rem; font-family: 'Instrument Sans', sans-serif; outline: none; }
+  .btn-submit { padding: 1.1rem 3rem; background: var(--stone); color: var(--white); font-family: 'DM Mono', monospace; text-transform: uppercase; border: none; cursor: pointer; }
 
-  /* INFO PANEL */
-  .info-panel { display: flex; flex-direction: column; gap: 4rem; }
-  .info-block h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem; font-weight: 400; margin-bottom: 1rem;
-    color: var(--stone);
-  }
-  .info-block p {
-    font-size: 0.9rem; line-height: 1.85;
-    color: var(--stone-warm); font-weight: 300;
-  }
-  .info-block a { color: inherit; text-decoration: none; transition: color 0.2s; }
-  .info-block a:hover { color: var(--stone); }
-
-  .map-visual {
-    position: relative; aspect-ratio: 16/10; overflow: hidden;
-    background: var(--parchment-deeper);
-  }
-  .map-visual img {
-    width: 100%; height: 100%; object-fit: cover; opacity: 0.8;
-    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .map-visual:hover img { transform: scale(1.04); }
-  .map-caption {
-    position: absolute; bottom: 0; left: 0;
-    background: rgba(253,250,245,0.92);
-    backdrop-filter: blur(8px);
-    padding: 1.5rem 2rem;
-  }
-  .map-caption-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold); display: block; margin-bottom: 0.4rem;
-  }
-  .map-caption p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem; font-style: italic; color: var(--stone);
-  }
-
-  .social-links { display: flex; gap: 3rem; flex-wrap: wrap; }
-  .social-link {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--stone-warm); text-decoration: none;
-    padding-bottom: 3px;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .social-link:hover { color: var(--stone); border-bottom-color: var(--gold); }
-
-  /* CTA ROW */
-  .cta-row {
-    padding: 4rem 3rem 6rem;
-    max-width: 1400px; margin: 0 auto;
-    border-top: 1px solid rgba(90,83,70,0.1);
-  }
-  .cta-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
-    font-weight: 300; line-height: 1.1; color: var(--stone);
-    max-width: 700px; margin-bottom: 1.5rem;
-  }
-  .cta-body { font-size: 1rem; line-height: 1.75; color: var(--stone-warm); max-width: 550px; font-weight: 300; }
+  /* ── GALLERY PAGE ── */
+  .filter-btn { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.6rem; background: transparent; color: var(--stone-warm); border: 1px solid rgba(90,83,70,0.2); cursor: pointer; transition: all 0.25s; }
+  .filter-btn.active { background: var(--stone); color: var(--white); border-color: var(--stone); }
+  .gal-item { position: relative; overflow: hidden; aspect-ratio: 4/5; cursor: pointer; }
+  .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+  .gal-item:hover img { transform: scale(1.06); }
+  .gal-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,25,22,0.65) 0%, transparent 55%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.8rem; opacity: 0; transition: opacity 0.35s; }
+  .gal-item:hover .gal-overlay { opacity: 1; }
+  .gal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #fdfaf5; }
+  .hidden { display: none; }
 
   /* ── FOOTER ── */
-  footer {
-    background: var(--stone);
-    color: rgba(253,250,245,0.5);
-    padding: 4rem 3rem;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 2rem;
-  }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem; font-weight: 400; letter-spacing: 0.3em;
-    text-transform: uppercase; color: rgba(253,250,245,0.7);
-    display: block; margin-bottom: 0.5rem;
-  }
-  .footer-copy {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(253,250,245,0.3);
-  }
-  .footer-links { display: flex; gap: 2.5rem; flex-wrap: wrap; }
-  .footer-links a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: rgba(253,250,245,0.35); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: rgba(253,250,245,0.7); }
+  footer { background: var(--stone); color: rgba(253,250,245,0.5); padding: 4rem 3rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; text-transform: uppercase; color: rgba(253,250,245,0.7); }
+  .fab { position: fixed; bottom: 2.5rem; right: 2.5rem; width: 3.5rem; height: 3.5rem; background: var(--stone); color: var(--white); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 90; }
 
-  /* FLOATING BUTTON */
-  .fab {
-    position: fixed; bottom: 2.5rem; right: 2.5rem;
-    width: 3.5rem; height: 3.5rem;
-    background: var(--stone); color: var(--white);
-    border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 12px 32px rgba(26,25,22,0.2);
-    z-index: 90;
-    transition: transform 0.2s, background 0.2s;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.9rem;
-  }
-  .fab:hover { transform: scale(1.08); background: var(--stone-mid); }
-
-  /* ── GALLERY FILTERS ── */
-  .filter-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
-    padding: 0.65rem 1.6rem;
-    background: transparent; color: var(--stone-warm);
-    border: 1px solid rgba(90,83,70,0.2);
-    cursor: pointer; transition: all 0.25s;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    background: var(--stone); color: var(--white);
-    border-color: var(--stone);
-  }
-  .gal-item { cursor: pointer; }
-  .gal-item:hover img { transform: scale(1.06); }
-  .gal-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(26,25,22,0.65) 0%, transparent 55%);
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 1.8rem; opacity: 0; transition: opacity 0.35s;
-  }
-  .gal-item:hover .gal-overlay { opacity: 1; }
-  .gal-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-weight: 400; color: #fdfaf5;
-    display: block;
-  }
-  .gal-year {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: rgba(253,250,245,0.5); display: block; margin-top: 0.3rem;
-  }
-  .gal-item.hidden { display: none; }
-
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
-    .project-hero-header, .narrative-section, .materials-section,
-    .gallery-header, .contact-header, .contact-main,
-    .cta-row, .materials-grid { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .narrative-section { grid-template-columns: 1fr; gap: 3rem; }
-    .contact-header { grid-template-columns: 1fr; }
-    .contact-main { grid-template-columns: 1fr; gap: 3rem; }
-    .project-meta-grid { grid-template-columns: 1fr 1fr; }
-    .materials-grid { grid-template-columns: 1fr; }
-    .mat-card-swatches { grid-column: 1; }
-    .swatches { grid-template-columns: 1fr 1fr; }
-    .gallery-scroll { padding: 0 1.5rem; }
+    .narrative-section, .contact-main, .materials-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">MONOLITH <span>ISTANBUL</span></a>
+  <a href="#" class="nav-logo" onclick="showPage('project'); return false;">MONOLITH <span>ISTANBUL</span></a>
   <ul class="nav-links">
     <li><a href="#" onclick="showPage('project'); return false;" class="active" id="nav-project">Projeler</a></li>
     <li><a href="#" onclick="showPage('gallery'); return false;" id="nav-gallery">Galeri</a></li>
@@ -553,416 +184,89 @@ Ayrıca projenin bütünlüğünü korumak adına "Projeler" sayfasının altın
 </nav>
 
 <div id="page-project" class="page active">
-
   <header class="project-hero-header">
-    <div class="breadcrumb">
-      <span>Portfolyo</span>
-      <span class="breadcrumb-dot"></span>
-      <span>Konut Projesi</span>
-      <span class="breadcrumb-dot"></span>
-      <span>Boğaz Evi</span>
-    </div>
+    <div class="breadcrumb"><span>Portfolyo</span><span class="breadcrumb-dot"></span><span>Boğaz Evi</span></div>
     <h1 class="project-title">BOĞAZ<br>EVİ</h1>
     <div class="project-meta-grid">
-      <div class="meta-item">
-        <span class="meta-label">Konum</span>
-        <span class="meta-value">Sarıyer, İstanbul</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Yıl</span>
-        <span class="meta-value">2024</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Alan</span>
-        <span class="meta-value">580 m²</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Durum</span>
-        <span class="meta-value">Tamamlandı</span>
-      </div>
+      <div class="meta-item"><span class="meta-label">Konum</span><span class="meta-value">Sarıyer, İstanbul</span></div>
+      <div class="meta-item"><span class="meta-label">Yıl</span><span class="meta-value">2024</span></div>
+      <div class="meta-item"><span class="meta-label">Alan</span><span class="meta-value">580 m²</span></div>
+      <div class="meta-item"><span class="meta-label">Durum</span><span class="meta-value">Tamamlandı</span></div>
     </div>
   </header>
-
-  <div class="hero-image-wrap">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" alt="Boğaz Evi Dış Cephe"/>
-  </div>
-
+  <div class="hero-image-wrap"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" alt="Hero"/></div>
   <section class="narrative-section">
-    <div class="narrative-left">
-      <h2 class="section-heading">Boğaz'ın Dokusuyla Kurulan<br><em>Monolitik Diyalog</em></h2>
-      <p class="narrative-body">Boğaz Evi, İstanbul'un tarihi siluetine ve topografyasına modern bir saygı duruşu niteliğinde. Dik bir yamaç üzerine kurgulanan yapı, Boğaz'ın hareketli sularını ve karşı kıyıdaki yeşili çerçeveleyen bir monolit olarak tasarlandı.</p>
-      <blockquote class="narrative-quote">"İç mekanda kullanılan doğal taş ve sıcak meşe dokuları, dış kabuğun brütalist karakteriyle sessiz bir tezat oluşturuyor."</blockquote>
-    
+    <div>
+      <h2 class="section-heading">Boğaz'ın Dokusuyla<br><em>Diyalog</em></h2>
+      <p class="narrative-body">İstanbul'un topografyasına modern bir saygı duruşu. Yapı, Boğaz'ın sularını çerçeveleyen bir monolit olarak tasarlandı.</p>
     </div>
     <div class="drawing-panel">
-      <span class="drawing-label">Teknik Çizimler: Kat Planı 02</span>
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Kat Planı" style="width:100%;height:auto;mix-blend-mode:multiply;opacity:0.75;"/>
+      <span class="drawing-label">Teknik Çizim 02</span>
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Plan" style="mix-blend-mode:multiply;opacity:0.7;"/>
     </div>
   </section>
-
-  <section class="gallery-section">
-    <div class="gallery-header">
-      <h3 class="section-heading" style="margin:0; font-size:clamp(1.5rem,3vw,2.2rem)">İç Mekan Perspektifleri</h3>
-      <div style="display:flex; gap:1.5rem;">
-        <button class="gallery-nav-btn" onclick="scrollGallery(-1)">← Geri</button>
-        <button class="gallery-nav-btn" onclick="scrollGallery(1)">İleri →</button>
-      </div>
-    </div>
-    <div class="gallery-scroll" id="galleryScroll">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop" alt="Oturma Odası"/>
-        <span class="gallery-caption">Oturma Odası</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=800&auto=format&fit=crop" alt="Mutfak Detayı"/>
-        <span class="gallery-caption">Mutfak</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://plus.unsplash.com/premium_photo-1661963058256-5358560f4c6c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Yatak Odası"/>
-        <span class="gallery-caption">Yatak Odası</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop" alt="Çalışma Alanı"/>
-        <span class="gallery-caption">Çalışma Alanı</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="materials-section">
-    <h3 class="section-heading" style="font-size:clamp(1.5rem,3vw,2.2rem)">Malzeme Paleti</h3>
-    <div class="materials-grid">
-      <div class="mat-card mat-card-concept">
-        <span class="card-eyebrow">Konsept Kararlar</span>
-        <h4 class="card-title">Sürdürülebilirlik<br>ve Yerellik</h4>
-        <p class="card-body">Binanın malzeme seçiminde yerel kaynaklı bazalt taşları ve sürdürülebilir ormanlardan elde edilen meşe kaplamalar önceliklendirilmiştir. Pasif iklimlendirme stratejileri ile enerji verimliliği en üst düzeye çıkarılmıştır.</p>
-      </div>
-      <div class="mat-card mat-card-cert">
-        <span class="card-eyebrow" style="color:rgba(253,250,245,0.4)">Sertifika</span>
-        <span class="cert-value">LEED<br>Gold</span>
-      </div>
-      <div class="mat-card mat-card-energy">
-        <span class="card-eyebrow">Enerji Skoru</span>
-        <span class="energy-value">A+++</span>
-      </div>
-      <div class="mat-card mat-card-swatches">
-        <div class="swatches">
-          <div class="swatch-block">
-            <div class="swatch-color" style="background:#2a2826;"></div>
-            <span class="swatch-label">Dış Cephe</span>
-            <span class="swatch-name">İşlenmiş Bazalt</span>
-          </div>
-          <div class="swatch-block">
-            <div class="swatch-color" style="background:#D4C4A8;"></div>
-            <span class="swatch-label">İç Mekan</span>
-            <span class="swatch-name">Doğal Meşe</span>
-          </div>
-          <div class="swatch-block">
-            <div class="swatch-color" style="background:#d8d4cc;"></div>
-            <span class="swatch-label">Zemin</span>
-            <span class="swatch-name">Dövme Beton</span>
-          </div>
-          <div class="swatch-block">
-            <div class="swatch-color" style="background:#c4bfb6; border:1px solid rgba(90,83,70,0.12);"></div>
-            <span class="swatch-label">Doğramalar</span>
-            <span class="swatch-name">Eloksallı Alüminyum</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section style="padding:0 3rem 6rem; max-width:1400px; margin:0 auto;">
-    <div style="border-top:1px solid rgba(90,83,70,0.12); padding-top:4rem; margin-bottom:3rem; display:flex; justify-content:space-between; align-items:center;">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:300; color:var(--stone);">Diğer Projeler</h3>
-      <button onclick="showPage('gallery')" style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;color:var(--stone-warm);border-bottom:1px solid var(--gold);padding-bottom:2px;">Tümünü Gör →</button>
-    </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem;">
-      <div style="cursor:pointer;" onclick="showPage('gallery')">
-
-      </div>
-    </div>
-  </section>
-
-  <section class="motto-section">
-    <div class="motto-bg">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" alt="Mimari Görsel"/>
-    </div>
-    <div class="motto-content">
-      <p class="motto-text">Sessizlik, mimarinin ulaştığı en yüksek formdur.</p>
-      <div class="motto-rule"></div>
-    </div>
-  </section>
-
-</div>
-
-<div id="page-contact" class="page">
-
-  <header class="contact-header">
-    <div>
-      <span class="contact-eyebrow">Bize Ulaşın</span>
-      <h1 class="contact-title">İletişim</h1>
-    </div>
-    <div>
-      <p class="contact-sub">Mimari vizyonunuzu gerçeğe dönüştürmek için Nişantaşı'ndaki stüdyomuzda sizi bekliyoruz.</p>
-    </div>
-  </header>
-
-  <div class="contact-main">
-    <div class="form-panel">
-      <div class="form-group">
-        <label class="form-label">Ad Soyad</label>
-        <input class="form-input" type="text" placeholder="İsminiz"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">E-posta</label>
-        <input class="form-input" type="email" placeholder="email@adresiniz.com"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Konu</label>
-        <input class="form-input" type="text" placeholder="Mesajınızın konusu"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Mesaj</label>
-        <textarea class="form-textarea" placeholder="Projenizden bahsedin..."></textarea>
-      </div>
-      <button class="btn-submit">Gönder</button>
-    </div>
-
-    <div class="info-panel">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;">
-        <div class="info-block">
-          <h3>Ofis</h3>
-          <p>Harbiye Mah. Abdi İpekçi Cad.<br>No: 42 D: 8, Nişantaşı<br>Şişli, İstanbul</p>
-        </div>
-        <div class="info-block">
-          <h3>İletişim</h3>
-          <p><a href="mailto:studio@monolith.ist">studio@monolith.ist</a><br><a href="tel:+902120000000">+90 (212) 000 00 00</a></p>
-        </div>
-      </div>
-
-      <div class="map-visual">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" alt="Ofis İçi"/>
-        <div class="map-caption">
-          <span class="map-caption-eyebrow">Konum</span>
-          <p>Abdi İpekçi Caddesi'nin merkezinde, tasarımın kalbindeyiz.</p>
-        </div>
-      </div>
-
-      <div>
-        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; margin-bottom:1.5rem;">Takip Edin</h3>
-        <div class="social-links">
-          <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">Behance</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-row" style="margin-top:5rem;">
-    <h2 class="cta-title">Yeni bir proje mi düşünüyorsunuz?</h2>
-    <p class="cta-body">Sürdürülebilir ve zamansız mimari çözümlerimizle tanışmak için randevu alabilirsiniz. Portfolyomuzu incelemek veya stüdyomuzu ziyaret etmek için formu doldurmanız yeterli.</p>
-  </div>
-
 </div>
 
 <div id="page-gallery" class="page">
-
   <header style="padding:7rem 3rem 4rem; max-width:1400px; margin:0 auto;">
-    <span style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1.5rem;">Tüm Çalışmalar</span>
-    <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(4rem,9vw,8rem); font-weight:300; line-height:0.9; letter-spacing:-0.02em; color:var(--stone);">Galeri</h1>
-    <div style="display:flex; gap:2rem; margin-top:3rem; flex-wrap:wrap;">
+    <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(4rem,9vw,8rem); font-weight:300;">Galeri</h1>
+    <div style="display:flex; gap:2rem; margin-top:3rem;">
       <button class="filter-btn active" onclick="filterGallery('all', this)">Tümü</button>
       <button class="filter-btn" onclick="filterGallery('konut', this)">Konut</button>
-
-
+      <button class="filter-btn" onclick="filterGallery('ticari', this)">Ticari</button>
     </div>
   </header>
-
-  <section style="padding:0 3rem 8rem; max-width:1400px; margin:0 auto;">
-
-   
-
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-bottom:1.5rem;">
-      <div class="gal-item" data-cat="konut" style="position:relative; overflow:hidden; aspect-ratio:4/5;">
-        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop" alt="Taş Villa" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">Taş Villa</span><span class="gal-year">2023 — Çengelköy</span></div>
-      </div>
-      <div class="gal-item" data-cat="kamusal" style="position:relative; overflow:hidden; aspect-ratio:4/5;">
-        <img src="https://images.unsplash.com/photo-1541123356219-284ebe98ae3b?q=80&w=800&auto=format&fit=crop" alt="Kültür Merkezi" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">Kültür Merkezi</span><span class="gal-year">2022 — Beyoğlu</span></div>
-      </div>
-      <div class="gal-item" data-cat="ticari" style="position:relative; overflow:hidden; aspect-ratio:4/5;">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop" alt="Ofis İç Mekan" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">Ofis İç Mekan</span><span class="gal-year">2024 — Maslak</span></div>
-      </div>
+  <section style="padding:0 3rem 8rem; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:1.5rem;">
+    <div class="gal-item" data-cat="konut">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop" alt="Villa"/>
+      <div class="gal-overlay"><span class="gal-title">Taş Villa</span></div>
     </div>
-
-    <div style="display:grid; grid-template-columns:1fr 2fr; gap:1.5rem; margin-bottom:1.5rem;">
-      <div class="gal-item" data-cat="kamusal" style="position:relative; overflow:hidden; aspect-ratio:3/4;">
-       
-      <div class="gal-item" data-cat="konut" style="position:relative; overflow:hidden; aspect-ratio:16/9;">
-        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop" alt="Minimalist Rezidans" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">Minimalist Rezidans</span><span class="gal-year">2024 — Etiler</span></div>
-      </div>
+    <div class="gal-item" data-cat="ticari">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop" alt="Ofis"/>
+      <div class="gal-overlay"><span class="gal-title">Modern Ofis</span></div>
     </div>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:1.5rem;">
-      <div class="gal-item" data-cat="konut" style="position:relative; overflow:hidden; aspect-ratio:3/4;">
-        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop" alt="Mutfak Tasarımı" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">Mutfak Tasarımı</span><span class="gal-year">2023</span></div>
-      </div>
-      <div class="gal-item" data-cat="ticari" style="position:relative; overflow:hidden; aspect-ratio:3/4;">
-        <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=800&auto=format&fit=crop" alt="İnşaat Detay" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">İnşaat Detay</span><span class="gal-year">2022</span></div>
-      </div>
-      <div class="gal-item" data-cat="kamusal" style="position:relative; overflow:hidden; aspect-ratio:3/4;">
-        <img src="https://images.unsplash.com/photo-1522050212171-61b01dd24579?q=80&w=800&auto=format&fit=crop" alt="Bina Cephesi" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">Bina Cephesi</span><span class="gal-year">2021</span></div>
-      </div>
-      <div class="gal-item" data-cat="konut" style="position:relative; overflow:hidden; aspect-ratio:3/4;">
-        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800&auto=format&fit=crop" alt="Terasa Bakış" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;"/>
-        <div class="gal-overlay"><span class="gal-title">Teras & Havuz</span><span class="gal-year">2024</span></div>
-      </div>
+    <div class="gal-item" data-cat="konut">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="Residance"/>
+      <div class="gal-overlay"><span class="gal-title">Minimalist Rezidans</span></div>
     </div>
-
   </section>
 </div>
 
 <div id="page-studio" class="page">
+  <div style="position:relative; height:60vh; overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" alt="Studio" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.6);"/>
+    <h1 style="position:absolute; bottom:4rem; left:3rem; color:white; font-family:'Cormorant Garamond',serif; font-size:5rem;">Stüdyo</h1>
+  </div>
+  <section style="padding:6rem 3rem; max-width:1000px; margin:0 auto;">
+    <p class="narrative-body">2010 yılında kurulan Monolith Istanbul, brütalist sertlik ile organik sıcaklığı harmanlayan bir tasarım diline sahiptir.</p>
+  </section>
+</div>
 
-  <div style="position:relative; height:70vh; overflow:hidden; margin-bottom:0;">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" alt="Stüdyo" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.55);"/>
-    <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:4rem 3rem;">
-      <span style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1.2rem;">Hakkımızda</span>
-      <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(3.5rem,8vw,7rem); font-weight:300; line-height:0.9; color:#fdfaf5; letter-spacing:-0.02em;">Stüdyo</h1>
+<div id="page-contact" class="page">
+  <header class="contact-header">
+    <h1 class="contact-title">İletişim</h1>
+    <p>Nişantaşı'ndaki stüdyomuzda sizi bekliyoruz.</p>
+  </header>
+  <div class="contact-main">
+    <div class="form-panel">
+      <div class="form-group"><label>Ad Soyad</label><input class="form-input" type="text"/></div>
+      <div class="form-group"><label>Mesaj</label><textarea class="form-textarea"></textarea></div>
+      <button class="btn-submit">Gönder</button>
+    </div>
+    <div class="info-panel">
+      <h3>Ofis</h3>
+      <p>Abdi İpekçi Cad. No: 42<br>Nişantaşı, İstanbul</p>
+      <p><a href="mailto:studio@monolith.ist">studio@monolith.ist</a></p>
     </div>
   </div>
-
-  <section style="padding:6rem 3rem; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:8rem; align-items:center;">
-    <div>
-      <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; line-height:1.15; color:var(--stone); margin-bottom:2rem;">Formun kalıcılığına, ışığın geçiciliğine adanmış bir pratik.</h2>
-      <p style="font-size:1rem; line-height:1.85; color:var(--stone-warm); font-weight:300; margin-bottom:1.5rem;">2010 yılında kurulan Monolith Istanbul, İstanbul'un kendine özgü coğrafyasından ve tarihinden ilham alarak zamansız mimari çözümler üretmektedir. Her proje, mekan ile insan arasında derin bir ilişki kurma amacı taşır.</p>
-      <p style="font-size:1rem; line-height:1.85; color:var(--stone-warm); font-weight:300;">Brütalist sertlik ile organik sıcaklığı harmanlayan tasarım dilimiz, sürdürülebilirlik ve yerel malzeme kullanımı ilkeleriyle şekillenir.</p>
-    </div>
-    <div style="position:relative; aspect-ratio:4/5; overflow:hidden;">
-      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000&auto=format&fit=crop" alt="Stüdyo İç Mekan" style="width:100%;height:100%;object-fit:cover;"/>
-      <div style="position:absolute;bottom:2rem;left:2rem;background:rgba(253,250,245,0.92);backdrop-filter:blur(8px);padding:1.2rem 1.8rem;">
-        <span style="font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.3rem;">Kuruluş</span>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--stone);">İstanbul, 2010</p>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--stone); padding:5rem 3rem; margin-bottom:0;">
-    <div style="max-width:1400px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:3rem;">
-      <div style="text-align:center;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:#fdfaf5; display:block;">14</span>
-        <span style="font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(253,250,245,0.4);">Yıl Deneyim</span>
-      </div>
-      <div style="text-align:center;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:#fdfaf5; display:block;">87</span>
-        <span style="font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(253,250,245,0.4);">Tamamlanan Proje</span>
-      </div>
-      <div style="text-align:center;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:#fdfaf5; display:block;">12</span>
-        <span style="font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(253,250,245,0.4);">Ödül</span>
-      </div>
-      <div style="text-align:center;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:#fdfaf5; display:block;">24</span>
-        <span style="font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(253,250,245,0.4);">Mimar</span>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:6rem 3rem; max-width:1400px; margin:0 auto;">
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,2.8rem); font-weight:300; color:var(--stone); margin-bottom:4rem;">Ekip</h2>
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:2rem;">
-      <div>
-        <div style="aspect-ratio:3/4; overflow:hidden; margin-bottom:1.2rem;">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Kurucu Mimar" style="width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(20%)'"/>
-        </div>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;display:block;">Kemal Aydın</span>
-        <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone-warm);opacity:0.5;">Kurucu & Baş Mimar</span>
-      </div>
-      <div>
-        <div style="aspect-ratio:3/4; overflow:hidden; margin-bottom:1.2rem;">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop" alt="Tasarım Direktörü" style="width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(20%)'"/>
-        </div>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;display:block;">Selin Yıldız</span>
-        <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone-warm);opacity:0.5;">Tasarım Direktörü</span>
-      </div>
-      <div>
-        <div style="aspect-ratio:3/4; overflow:hidden; margin-bottom:1.2rem;">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop" alt="Proje Müdürü" style="width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(20%)'"/>
-        </div>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;display:block;">Tarık Bozkurt</span>
-        <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone-warm);opacity:0.5;">Proje Müdürü</span>
-      </div>
-      <div>
-        <div style="aspect-ratio:3/4; overflow:hidden; margin-bottom:1.2rem;">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Sürdürülebilirlik Uzmanı" style="width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(20%)'"/>
-        </div>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;display:block;">Ayşe Kara</span>
-        <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone-warm);opacity:0.5;">Sürdürülebilirlik Uzmanı</span>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:0 3rem 6rem; max-width:1400px; margin:0 auto;">
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,2.8rem); font-weight:300; color:var(--stone); margin-bottom:3rem;">Ofisimiz</h2>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem;">
-      <div style="aspect-ratio:4/3; overflow:hidden;">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Ofis 1" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div style="aspect-ratio:4/3; overflow:hidden;">
-        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop" alt="Ofis 2" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-      <div style="aspect-ratio:4/3; overflow:hidden;">
-        <img src="https://plus.unsplash.com/premium_photo-1661906152280-462ebef433ac?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ofis 3" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--parchment-dark); padding:5rem 3rem;">
-    <div style="max-width:1400px; margin:0 auto;">
-      <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,2.8rem); font-weight:300; color:var(--stone); margin-bottom:3rem;">Ödüller & Basın</h2>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
-        <div style="border-top:1px solid rgba(90,83,70,0.2); padding-top:2rem;">
-          <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem;">2024</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--stone);margin-bottom:0.5rem;">Mimarlık Ödülü — Konut Kategorisi</p>
-          <span style="font-size:0.8rem;color:var(--stone-warm);">Türk Mimarlar Birliği</span>
-        </div>
-        <div style="border-top:1px solid rgba(90,83,70,0.2); padding-top:2rem;">
-          <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem;">2023</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--stone);margin-bottom:0.5rem;">En İyi Tasarım — LEED Gold</p>
-          <span style="font-size:0.8rem;color:var(--stone-warm);">Yeşil Bina Konseyi</span>
-        </div>
-        <div style="border-top:1px solid rgba(90,83,70,0.2); padding-top:2rem;">
-          <span style="font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem;">2022</span>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--stone);margin-bottom:0.5rem;">Wallpaper* Design Award</p>
-          <span style="font-size:0.8rem;color:var(--stone-warm);">Wallpaper Magazine</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </div>
 
 <footer>
-  <div>
-    <span class="footer-logo">Monolith Istanbul</span>
-    <span class="footer-copy">© 2026 Monolith Istanbul. Tüm Hakları Saklıdır. — Tasarım: Atelier Monochrome</span>
-  </div>
-  <div class="footer-links">
-    <a href="#">Instagram</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">KVKK</a>
-  </div>
+  <span class="footer-logo">Monolith Istanbul</span>
+  <span style="font-size:0.6rem; opacity:0.5;">© 2026 — Tüm Hakları Saklıdır.</span>
 </footer>
 
-<button class="fab" onclick="showPage('contact');" title="İletişim">✉</button>
+<button class="fab" onclick="showPage('contact');">✉</button>
 
 <script>
   function showPage(name) {
@@ -974,29 +278,13 @@ Ayrıca projenin bütünlüğünü korumak adına "Projeler" sayfasının altın
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function scrollGallery(dir) {
-    const el = document.getElementById('galleryScroll');
-    el.scrollBy({ left: dir * 380, behavior: 'smooth' });
-  }
-
   function filterGallery(cat, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.gal-item').forEach(item => {
-      if (cat === 'all' || item.dataset.cat === cat) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
+      item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
     });
   }
-
-  // Nav scroll shadow
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.borderBottomColor = window.scrollY > 20 ? 'rgba(90,83,70,0.12)' : 'rgba(90,83,70,0.04)';
-  });
 </script>
 </body>
 </html>
-```
